@@ -7,23 +7,36 @@ time = prompt("Введите дату в формате YYYY-MM-DD", "2019-01-0
 
 let appData = {
     budget: money,
+    expenses: {},
+    optionalExpenses: {},
+    income: [],
     timeData: time,
-    expenses: '',
-    optionalExpenses: '',
-    income: '',
     savings: false
 };
-//appData.budget = money;
 
-console.log(appData);
+for (let i = 0; i < 2; i++) {
+    let a = prompt("Введите обязательную статью расходов в этом месяце", "sisi"),
+        b = prompt("Во сколько обойдется?", "500");
+    if (typeof (a))!= null && typeof (b))!= null && a != '' && b != '' && a.length < 50)
+    {
+        appData.expenses[a] = b;
+    }
 
-let expProp = prompt("Введите обязательную статью расходов в этом месяце", "sisi"),
-    expVal = prompt("Во сколько обойдется?", "500");
 
-let expenses = {
-    [expProp]: expVal,
-};
+}
 
-alert(expenses[expProp]/30);
+appData.moneyPerDay = appData.budget / 30;
+console.log("dialy budget: ", appData.moneyPerDay);
 
-//alert(expenses.[expProp]);
+if(appData.moneyPerDay<100){
+    console.log("min level");
+}
+else if(appData.moneyPerDay>100 && appData.moneyPerDay<2000){
+    console.log("mid level");
+}
+else if(appData.moneyPerDay>2000){
+    console.log("max level");
+}
+else {
+    console.log("error");
+}
