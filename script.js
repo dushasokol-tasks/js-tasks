@@ -17,7 +17,7 @@ let appData = {
 for (let i = 0; i < 2; i++) {
     let a = prompt("Введите обязательную статью расходов в этом месяце", "sisi"),
         b = prompt("Во сколько обойдется?", "500");
-    if (typeof (a))!= null && typeof (b))!= null && a != '' && b != '' && a.length < 50)
+    if ((typeof (a) != null) && (typeof (b) != null) && a != '' && b != '' && a.length < 50)
     {
         appData.expenses[a] = b;
     }
@@ -28,13 +28,13 @@ for (let i = 0; i < 2; i++) {
 appData.moneyPerDay = appData.budget / 30;
 console.log("dialy budget: ", appData.moneyPerDay);
 
-if(appData.moneyPerDay<100){
+if (appData.moneyPerDay < 100) {
     console.log("min level");
 }
-else if(appData.moneyPerDay>100 && appData.moneyPerDay<2000){
+else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
     console.log("mid level");
 }
-else if(appData.moneyPerDay>2000){
+else if (appData.moneyPerDay > 2000) {
     console.log("max level");
 }
 else {
