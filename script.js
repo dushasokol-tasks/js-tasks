@@ -82,7 +82,7 @@ let appData = {
         appData.income.push(prompt("Что-то еще", "акции"));
         appData.income.sort();
 let i=1;
-        appData.income.forEach(element => console.log(i++,element));
+        appData.income.forEach(element => console.log(element));
     }
 };
 
